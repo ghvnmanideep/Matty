@@ -13,9 +13,11 @@ connectDB();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Adjust this if your frontend is hosted elsewhere
-    credentials: true,
-  })
+    origin: "https://matty-p9zo.vercel.app/signin", // Adjust this if your frontend is hosted elsewhere
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
 );
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
